@@ -1,0 +1,123 @@
+body {
+  background: url("src/Naturaleza.gif") no-repeat center center fixed;
+  background-size: cover;
+}
+  img {
+      height: 250px;
+      width: 275px;
+    }
+/* Barra de navegación */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+  margin: 0;
+  background-color: #333; /* Color de fondo de la barra de navegación */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  font-family: 'Times New Roman', Times, serif; /* Fuente Times New Roman */
+  font-weight: bold;
+  font-size: 18px; /* Tamaño de fuente más grande */
+  padding: 10px 15px;
+  display: inline-block;
+  transition: background-color 0.3s ease; /* Transición para hover */
+  border-radius: 5px;
+}
+
+nav a:hover {
+  color: #ff6600; /* Color del texto en hover */
+  background-color: #444; /* Fondo oscuro en hover */
+}
+
+/* Estilo para el header */
+header {
+  background-color: #2d6a4f; /* Verde más suave para el fondo */
+  color: #fff;
+  padding: 20px;
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+
+/* Reducir tamaños para pantallas pequeñas, fuente y estilo */
+@media (max-width: 600px) {
+  body {
+    font-size:  14px;
+  }
+}
+li {
+ display:block;
+  margin-bottom: 10px;
+}
+.container {
+    width: 80%;
+    margin: 0 auto;
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+main {
+    margin: 20px 0;
+}
+body2 {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+h1 {
+    text-align: center;
+    font-family: sans-serif;
+}
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+/* Estilo para el footer */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+/* Estilo para el footer */
+footer {
+  background-color: #333; /* Fondo oscuro */
+  color: white;
+  text-align: center;
+  padding: 20px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  font-family: 'Times New Roman', Times, serif;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2); /* Sombra para el footer */
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 16px; /* Tamaño de fuente ajustado */
+}

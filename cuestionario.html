@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contaminación</title>
+  <link rel="stylesheet" type="text/css" href="style3.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="Como-P.html">Cómo Prevenirla</a></li>
+        <li><a href="cuestionario.html">Cuestionario</a></li>
+        <li><a href="#">Posicionamientos</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="content">
+      <div class="container">
+        <h1>Cuestionario Ambiental</h1>
+        <div id="quiz">
+          <!-- Pregunta 1 -->
+          <div class="question">
+            <p><strong>1. ¿Qué práctica ayuda a reducir el desperdicio de alimentos?</strong></p>
+            <div class="options">
+              <button onclick="checkAnswer(this, true)">Planificar las compras y utilizar adecuadamente los alimentos.</button>
+              <button onclick="checkAnswer(this, false)">Utilizar productos desechables.</button>
+              <button onclick="checkAnswer(this, false)">Evitar el reciclaje de plástico.</button>
+              <button onclick="checkAnswer(this, false)">Comprar productos en exceso.</button>
+            </div>
+          </div>
+
+          <!-- Pregunta 2 -->
+          <div class="question">
+            <p><strong>2. ¿Cuál es una medida eficiente para ahorrar agua?</strong></p>
+            <div class="options">
+              <button onclick="checkAnswer(this, false)">Utilizar agua sin restricciones.</button>
+              <button onclick="checkAnswer(this, true)">Instalar inodoros de bajo consumo y recolectar agua de lluvia.</button>
+              <button onclick="checkAnswer(this, false)">Mantener grifos abiertos todo el tiempo.</button>
+              <button onclick="checkAnswer(this, false)">Usar tecnologías no optimizadas.</button>
+            </div>
+          </div>
+
+          <!-- Pregunta 3 -->
+          <div class="question">
+            <p><strong>3. ¿Qué acción protege la biodiversidad?</strong></p>
+            <div class="options">
+              <button onclick="checkAnswer(this, false)">Realizar caza ilegal.</button>
+              <button onclick="checkAnswer(this, false)">Destruir hábitats naturales.</button>
+              <button onclick="checkAnswer(this, true)">Proteger especies en peligro y evitar la caza ilegal.</button>
+              <button onclick="checkAnswer(this, false)">Ignorar las áreas verdes.</button>
+            </div>
+          </div>
+
+          <!-- Pregunta 4 -->
+          <div class="question">
+            <p><strong>4. ¿Qué fomenta la educación ambiental?</strong></p>
+            <div class="options">
+              <button onclick="checkAnswer(this, true)">Sensibilizar sobre los efectos de la contaminación desde la escuela.</button>
+              <button onclick="checkAnswer(this, false)">Evitar hablar de normativas ecológicas.</button>
+              <button onclick="checkAnswer(this, false)">Ignorar la importancia del medio ambiente.</button>
+              <button onclick="checkAnswer(this, false)">No aplicar leyes ecológicas.</button>
+            </div>
+          </div>
+
+          <!-- Botón para mostrar calificación -->
+          <div>
+            <button class="show-results" onclick="showResults()">Ver resultados</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- Ventana emergente -->
+  <div id="popupResults" class="popupResults">
+    <div class="popup-content">
+      <h2 id="scoreMessage"></h2>
+      <p id="scoreDetails"></p>
+      <button onclick="closePopup()">Cerrar</button>
+    </div>
+  </div>
+
+  <script>
+    let score = 0;
+    const totalQuestions = 4;
+
+    // Función para verificar la respuesta
+    function checkAnswer(button, isCorrect) {
+      // Desactivar todos los botones de la pregunta actual
+      const buttons = button.parentNode.querySelectorAll("button");
+      buttons.forEach(btn => btn.disabled = true);
+
+      // Resaltar la respuesta seleccionada
+      if (isCorrect) {
+        button.classList.add("correct");
+        score++; // Incrementar la puntuación si la respuesta es correcta
+      } else {
+        button.classList.add("incorrect");
+      }
+    }
+
+    // Función para mostrar los resultados
+    function showResults() {
+      const scoreMessage = document.getElementById("scoreMessage");
+      const scoreDetails = document.getElementById("scoreDetails");
+
+      // Mostrar mensaje según el puntaje
+      if (score === totalQuestions) {
+        scoreMessage.textContent = "¡Excelente!";
+        scoreDetails.textContent = "¡Obtuviste un puntaje perfecto! Seguir con este compromiso ecológico es fundamental para el futuro.";
+      } else if (score >= totalQuestions * 0.75) {
+        scoreMessage.textContent = "Muy bien!";
+        scoreDetails.textContent = "¡Has respondido correctamente la mayoría de las preguntas! Sigue aprendiendo sobre cómo cuidar el planeta.";
+      } else if (score >= totalQuestions * 0.5) {
+        scoreMessage.textContent = "Bien hecho!";
+        scoreDetails.textContent = "Tienes un buen entendimiento, pero aún hay áreas que puedes mejorar. ¡Sigue aprendiendo!";
+      } else {
+        scoreMessage.textContent = "Puedes mejorar!";
+        scoreDetails.textContent = "Tu puntaje está por debajo de lo esperado. Repasa los temas y mejora tu conocimiento sobre el medio ambiente.";
+      }
+
+      // Mostrar la ventana emergente con los resultados
+      document.getElementById("popupResults").style.display = "flex";
+    }
+
+    // Función para cerrar la ventana emergente
+    function closePopup() {
+      document.getElementById("popupResults").style.display = "none";
+      score = 0; // Resetear el puntaje para el siguiente intento
+      const buttons = document.querySelectorAll("button");
+      buttons.forEach(btn => btn.disabled = false); // Rehabilitar los botones
+      buttons.forEach(btn => btn.classList.remove("correct", "incorrect")); // Eliminar colores de los botones
+    }
+  </script>
+  <br>
+  <br>
+  <br>
+  <br>
+  <footer>
+    <p>&copy; Eidan Rumbea 2024 All Rights Reserved</p>
+  </footer>
+</body>
+</html>
